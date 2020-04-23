@@ -10,6 +10,4 @@ Bot fro telegram connects to Yandex maps API and returns 1st result. Django prov
 - Search Areas: area
 
 
-![Alt text](https://github.com/Hassan-Mallah/TelegramMapsBot-Django/blob/master/screenshot.jpeg)
-
 | <img src="https://github.com/Hassan-Mallah/TelegramMapsBot-Django/blob/master/screenshot.jpeg" alt="" data-canonical-width="200"  height="400"/> | <img src="https://github.com/Hassan-Mallah/TelegramMapsBot-Django/blob/master/screenshot1.jpeg" alt="" data-canonical-width="200"  height="400"/>| <img src="https://github.com/Hassan-Mallah/TelegramMapsBot-Django/blob/master/screenshot2.jpeg" alt="" data-canonical-width="200"  height="200"/> |
