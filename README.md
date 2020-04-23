@@ -8,3 +8,6 @@ Bot fro telegram connects to Yandex maps API and returns 1st result. Django prov
 - Search Results: query - result
 - Telegram users: user-id - result-id(FK)
 - Search Areas: area
+
+
+![Alt text](https://github.com/Hassan-Mallah/TelegramMapsBot-Django/blob/master/screenshot.jpeg)
