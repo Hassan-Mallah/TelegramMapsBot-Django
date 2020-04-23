@@ -1,7 +1,10 @@
 # TelegramMapsBot-Django
 Bot fro telegram connects to Yandex maps API and returns 1st result. Django provides admins groups and history.
-# ImagesDjango
-App to download images and resize them
+# State diagram
 --------------------------
 ![Alt text](https://github.com/Hassan-Mallah/TelegramMapsBot-Django/blob/master/state_diagram.jpg)
 --------------------------
+# Databse has 3 tables:
+- Search Results: query - result
+- Telegram users: user-id - result-id(FK)
+- Search Areas: area
