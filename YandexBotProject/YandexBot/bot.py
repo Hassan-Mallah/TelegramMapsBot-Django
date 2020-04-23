@@ -1,6 +1,3 @@
-# comments on the code
-# empty DB
-# name of search areas in admin
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, ConversationHandler)
 import requests
@@ -23,7 +20,7 @@ def search(update, context):
 
 def result(update, context):
     # Yandex API and key
-    url = 'https://geocode-maps.yandex.ru/1.x/?apikey=fa55c0df-c4f5-4962-8cc8-921cc8f442b9&format=json&results=1&geocode='
+    url = 'https://geocode-maps.yandex.ru/1.x/?apikey=<You Key>&format=json&results=1&geocode='
     query = update.message.text
     user = update.message.from_user
 
