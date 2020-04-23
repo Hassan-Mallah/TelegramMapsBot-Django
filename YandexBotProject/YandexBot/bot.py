@@ -20,7 +20,7 @@ def search(update, context):
 
 def result(update, context):
     # Yandex API and key
-    url = 'https://geocode-maps.yandex.ru/1.x/?apikey=<You Key>&format=json&results=1&geocode='
+    url = 'https://geocode-maps.yandex.ru/1.x/?apikey=<Your Key>&format=json&results=1&geocode='
     query = update.message.text
     user = update.message.from_user
 
