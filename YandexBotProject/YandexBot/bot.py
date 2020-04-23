@@ -83,7 +83,7 @@ def cancel(update, context):
 
 def main():
     # Token and VPN/SOCKS
-    TOKEN = '1136453226:AAHbKj56CeWiynkg3jShCE7rdvDm_oUwgII'
+    TOKEN = '<Your Token>'
     REQUEST_KWARGS = {
         'proxy_url': 'socks5://localhost:9150',
     }
