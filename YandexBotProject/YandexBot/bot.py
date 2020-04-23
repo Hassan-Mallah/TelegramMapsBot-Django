@@ -26,24 +26,22 @@ def result(update, context):
 
     # request from API according to areas
     areas = SearchAreas.objects.all()
-    t = 'not found'
-    print(areas)
-    print(len(areas))
+    reply = 'not found'
     if len(areas) == 0:  # if there are no search areas
-        r = requests.get(url + query).json()['response']['GeoObjectCollection']['featureMember']
-        if r != []:
-            t = r[0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['Address']['formatted']
+        request = requests.get(url + query).json()['response']['GeoObjectCollection']['featureMember']
+        if request != []:
+            reply = request[0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['Address']['formatted']
     else:
         for i in areas:
-            r = requests.get(url + i.area + ' ' + query).json()['response']['GeoObjectCollection']['featureMember']
-            if r != []:
-                t = r[0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['Address']['formatted']
+            request = requests.get(url + i.area + ' ' + query).json()['response']['GeoObjectCollection']['featureMember']
+            if request != []:
+                reply = request[0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['Address']['formatted']
                 break
 
 
     # save to DB
     searchresult = SearchResult()
-    searchresult.result = t
+    searchresult.result = reply
     searchresult.query = query
     searchresult.save()
 
@@ -53,7 +51,7 @@ def result(update, context):
     telegramuser.save()
 
     # print result to user
-    update.message.reply_text('Result ' + t)
+    update.message.reply_text('Result ' + reply)
     update.message.reply_text('/start again!')
     return ConversationHandler.END
 
