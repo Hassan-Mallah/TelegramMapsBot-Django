@@ -27,11 +27,19 @@ def result(update, context):
     # request from API according to areas
     areas = SearchAreas.objects.all()
     t = 'not found'
-    for i in areas:
-        r = requests.get(url + i.area + ' ' + query).json()['response']['GeoObjectCollection']['featureMember']
+    print(areas)
+    print(len(areas))
+    if len(areas) == 0:  # if there are no search areas
+        r = requests.get(url + query).json()['response']['GeoObjectCollection']['featureMember']
         if r != []:
             t = r[0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['Address']['formatted']
-            break
+    else:
+        for i in areas:
+            r = requests.get(url + i.area + ' ' + query).json()['response']['GeoObjectCollection']['featureMember']
+            if r != []:
+                t = r[0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['Address']['formatted']
+                break
+
 
     # save to DB
     searchresult = SearchResult()
