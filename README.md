@@ -1,5 +1,5 @@
 # TelegramMapsBot-Django
-Bot fro telegram connects to Yandex maps API and returns 1st result. Django provides admins groups and history.
+Telegra Bot connects to Yandex maps API and returns 1st result. Django provides search areas, admin groups and history .
 # State diagram
 --------------------------
 
